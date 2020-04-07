@@ -14,6 +14,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aC2mHqz9qvjWIb1ZdpVtkYI01t" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,6 +25,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -54,5 +58,11 @@
       <updated>1586225412525</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="579" y="308" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586241424716">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="579" y="308" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1586241424716" />
   </component>
 </project>
