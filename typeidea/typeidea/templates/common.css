@@ -14,3 +14,9 @@ p{
     text-indent: 2em;
     line-height: 1.4;
 }
+a{
+    color: gray;
+}
+a:hover{
+    color: crimson;
+}
