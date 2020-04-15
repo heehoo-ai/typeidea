@@ -17,8 +17,12 @@
         .clear:after{content: ''; display: block;  clear: both}
 
         #main{  width:366px; margin:20px auto}
-        #main .title{ height: 23px; line-height: 23px; font-size: 12px; bold; padding-left: 30px;
+        #main .title{ height: 23px; line-height: 23px; font-size: 12px; padding-left: 30px;
             background-color: cadetblue;
+            position: relative;
+        }
+        #main h2:before{ content: ""; display: block; background-color: red; width: 6px; height: 6px;position: absolute;
+            left:15px; top: 50%; margin-top: -3px;
         }
         #main ul{
             overflow: hidden;}
@@ -27,8 +31,11 @@
         #main .pic{ width: 99px; border: 1px solid #666666; margin-right: 8px;}
         #main .pic img{ margin: 2px;  }
         #main .content{ width: 240px; font-size: 12px; line-height: 20px;}
-        #main .content p{line-height: 20px;}
-        #main .content h2{ line-height: 24px;}
+            /*white-space: nowrap; overflow: hidden; text-overflow: ellipsis; 加省略号*/
+
+        #main .content p{line-height: 20px; }
+        #main .content h3{ line-height: 22px; }
+
 
     </style>
 </head>
@@ -46,7 +53,7 @@
                     </a>
                 </div>
                 <div class="l content">
-                    <h2>加勒比海盗1</h2>
+                    <h3>加勒比海盗1</h3>
                     <p>
                         具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容...
                         <a href="#">[详细]</a>
@@ -60,7 +67,7 @@
                     </a>
                 </div>
                 <div class="l content">
-                    <h2>加勒比海盗2</h2>
+                    <h3>加勒比海盗2</h3>
                     <p>
                         具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容...
                         <a href="#">[详细]</a>
@@ -74,7 +81,7 @@
                     </a>
                 </div>
                 <div class="l content">
-                    <h2>加勒比海盗3</h2>
+                    <h3>加勒比海盗3</h3>
                     <p>
                         具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容...
                         <a href="#">[详细]</a>
