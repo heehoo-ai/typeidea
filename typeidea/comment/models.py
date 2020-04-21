@@ -16,7 +16,7 @@ class Comment(models.Model):
     website = models.URLField(verbose_name="网站")
     created_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     content = models.CharField(max_length=2000, verbose_name="内容")
-    target = models.ForeignKey(to=Post, verbose_name="评论目标")
+    target = models.ForeignKey(to=Post, verbose_name="评论目标", on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name_plural = verbose_name = "评论"
