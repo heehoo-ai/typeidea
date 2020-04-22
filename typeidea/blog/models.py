@@ -22,6 +22,9 @@ class Category(models.Model):
         verbose_name = "分类"
         verbose_name_plural = "分类"
 
+    def __str__(self):
+        return self.name
+
 
 # 标签
 class Tag(models.Model):
@@ -40,6 +43,8 @@ class Tag(models.Model):
         verbose_name_plural = "标签"
         ordering = ['-id']
 
+    def __str__(self):
+        return self.name
 
 # 文章
 class Post(models.Model):
@@ -65,5 +70,9 @@ class Post(models.Model):
         verbose_name = "文章"
         verbose_name_plural = "文章"
         ordering = ['-id']
+
+    def __str__(self):
+        return self.title
+
 
 
