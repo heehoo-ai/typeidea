@@ -1,4 +1,3 @@
-
 from typeidea.custom_site import custom_site
 from django.contrib import admin
 from django.utils.html import format_html
