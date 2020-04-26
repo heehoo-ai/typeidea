@@ -144,7 +144,7 @@ class LogEntryAdmin(admin.ModelAdmin):
      list_display = (
          'object_repr',  # 实例的展示名， __str__返回的内容
          'object_id',   # 变更实例的id
-         'action_flag', #  操作标记，  ADDITION, CHANGER, DELETION
-         'user',        #   当前用户
+         'action_flag',  # 操作标记，  ADDITION, CHANGER, DELETION
+         'user',        # 当前用户
          'change_message' # 记录的消息
      )
