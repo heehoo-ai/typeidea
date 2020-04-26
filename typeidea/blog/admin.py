@@ -5,30 +5,32 @@ from django.urls import reverse
 from .models import Category, Tag, Post
 from django.contrib.auth.models import User
 from .adminforms import PostAdminForm
+from typeidea.base_admin import BaseOwnerAdmin
+from django.contrib.admin.models import LogEntry
 
 
 # Register your models here.
 
 
-# class PostInline(admin.StackedInline):  # admin.TabularInline是横向排列的样式
-#     fields = ('title', 'desc', 'owner')
-#     extra = 1
-#     model = Post
+class PostInline(admin.StackedInline):  # admin.TabularInline是横向排列的样式
+    fields = ('title', 'desc', 'owner')
+    extra = 1
+    model = Post
 
 
 @admin.register(Category, site=custom_site)
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(BaseOwnerAdmin):
     list_display = ('name', 'status', 'is_nav', 'owner', 'created_time', )
     fields = ('name', 'status', 'is_nav')
-    # inlines = [PostInline, ]
+    inlines = [PostInline, ]
 
-    def save_model(self, request, obj, form, change):
-        obj.owner = request.user
-        return super(CategoryAdmin, self).save_model(request, obj, form, change)
+    # def save_model(self, request, obj, form, change):
+    #     obj.owner = request.user
+    #     return super(CategoryAdmin, self).save_model(request, obj, form, change)
 
 
 @admin.register(Tag, site=custom_site)
-class TagAdmin(admin.ModelAdmin):
+class TagAdmin(BaseOwnerAdmin):
     list_display = ('name', 'status', 'created_time')
     fields = ('name', 'status', )
 
@@ -65,7 +67,7 @@ class OwnerFilter(admin.SimpleListFilter):
 
 
 @admin.register(Post, site=custom_site)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(BaseOwnerAdmin):
     # 展示页面
     form = PostAdminForm
     list_display = [
@@ -119,19 +121,30 @@ class PostAdmin(admin.ModelAdmin):
         )
     operator.short_description = '操作'
 
-    def save_model(self, request, obj, form, change):
-        obj.owner = request.user
-        return super(PostAdmin, self).save_model(request, obj, form, change)
-
-    def get_queryset(self, request):
-        """函数作用：使当前登录的用户只能看到自己负责的服务器"""
-        qs = super(PostAdmin, self).get_queryset(request)
-        if request.user.is_superuser:
-            return qs
-        return qs.filter(owner=request.user)
+    # def save_model(self, request, obj, form, change):
+    #     obj.owner = request.user
+    #     return super(PostAdmin, self).save_model(request, obj, form, change)
+    #
+    # def get_queryset(self, request):
+    #     """函数作用：使当前登录的用户只能看到自己负责的服务器"""
+    #     qs = super(PostAdmin, self).get_queryset(request)
+    #     if request.user.is_superuser:
+    #         return qs
+    #     return qs.filter(owner=request.user)
 
     class Media:
         css = {
             "all": ("https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css",)
         }
         js = ('https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.js',)
+
+
+@admin.register(LogEntry, site=custom_site)
+class LogEntryAdmin(admin.ModelAdmin):
+     list_display = (
+         'object_repr',  # 实例的展示名， __str__返回的内容
+         'object_id',   # 变更实例的id
+         'action_flag', #  操作标记，  ADDITION, CHANGER, DELETION
+         'user',        #   当前用户
+         'change_message' # 记录的消息
+     )

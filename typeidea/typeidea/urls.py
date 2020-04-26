@@ -18,6 +18,6 @@ from django.urls import path
 from .custom_site import custom_site
 
 urlpatterns = [
-    path('admin/', custom_site.urls ),
+    path('admin/', custom_site.urls),
     path('super_admin/', admin.site.urls)
 ]
