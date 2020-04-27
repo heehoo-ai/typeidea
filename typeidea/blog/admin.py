@@ -132,11 +132,11 @@ class PostAdmin(BaseOwnerAdmin):
     #         return qs
     #     return qs.filter(owner=request.user)
 
-    class Media:
-        css = {
-            "all": ("https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css",)
-        }
-        js = ('https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.js',)
+    # class Media:
+    #     css = {
+    #         "all": ("https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css",)
+    #     }
+    #     js = ('https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.js',)
 
 
 @admin.register(LogEntry, site=custom_site)
@@ -146,5 +146,5 @@ class LogEntryAdmin(admin.ModelAdmin):
          'object_id',   # 变更实例的id
          'action_flag',  # 操作标记，  ADDITION, CHANGER, DELETION
          'user',        # 当前用户
-         'change_message' # 记录的消息
+         'change_message'  # 记录的消息
      )

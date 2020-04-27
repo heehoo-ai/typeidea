@@ -21,5 +21,3 @@ class Comment(models.Model):
     class Meta:
         verbose_name_plural = verbose_name = "评论"
 
-    def __str__(self):
-        return self.target
