@@ -5,6 +5,21 @@
     <title>Post_list</title>
 </head>
 <body>
+    <div>顶部分类：
+        {% for cate in navs %}
+            <ul>
+            <li><a href="/category/{{ cate.id }}/">{{ cate.name }}</a></li>
+            </ul>
+        {% endfor %}
+    </div>
+    {% if tag %}
+    标签页：{{ tag.name }}
+    {% endif %}
+
+    {% if category %}
+    分类页：{{ category.name }}
+    {% endif %}
+
     <ul>
         {% for post in post_list %}
             <li>
@@ -17,5 +32,13 @@
             </li>
         {% endfor %}
     </ul>
+
+    <div>底部分类：
+        {% for cate in categories %}
+            <ul>
+            <li><a href="/category/{{ cate.id }}/">{{ cate.name }}</a></li>
+            </ul>
+        {% endfor %}
+    </div>
 </body>
 </html>

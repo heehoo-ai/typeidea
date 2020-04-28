@@ -5,6 +5,7 @@
     <title>Detail</title>
 </head>
 <body>
+
     {% if post %}
         <h1>{{ post.title }}</h1>
         <div>
@@ -15,6 +16,8 @@
     {% else %}
         <h2>没有id为{{ post.id }}的文章</h2>
     {% endif %}
+
+
 
 </body>
 </html>
