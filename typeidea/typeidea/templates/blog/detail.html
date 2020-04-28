@@ -5,7 +5,16 @@
     <title>Detail</title>
 </head>
 <body>
-    <h2>Detail</h2>
-    {{ name }}
+    {% if post %}
+        <h1>{{ post.title }}</h1>
+        <div>
+            <span>分类：{{ post.category.name }}</span>
+            <span>作者：{{ post.owner.username }}</span>
+        </div>
+        <p>{{ post.content }}</p>
+    {% else %}
+        <h2>没有id为{{ post.id }}的文章</h2>
+    {% endif %}
+
 </body>
 </html>
