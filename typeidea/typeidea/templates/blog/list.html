@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Post_list</title>
-</head>
-<body>
-    <div>顶部分类：
-        {% for cate in navs %}
-            <ul>
-            <li><a href="/category/{{ cate.id }}/">{{ cate.name }}</a></li>
-            </ul>
-        {% endfor %}
-    </div>
-    {% if tag %}
-    标签页：{{ tag.name }}
-    {% endif %}
+{% extends "./base.html" %}
 
-    {% if category %}
-    分类页：{{ category.name }}
-    {% endif %}
+{% block title %}
+        {% if tag %}
+        标签页：{{ tag.name }}
+        {% elif category %}
+        分类页：{{ category.name }}
+        {% else %}
+        首页
+        {% endif %}
+{% endblock %}
 
+{% block main %}
     <ul>
         {% for post in post_list %}
             <li>
-                <a href="/post/{{ post.id }}.html">{{ post.title }}</a>
+{#                <a href="/post/{{ post.id }}.html">{{ post.title }}</a>#}
+                <a href="{% url 'post-detail' post.id %} ">{{ post.title }}</a>
                 <div>
                     <span>作者：{{ post.owner.username }}</span>
                     <span>分类：{{ post.category.name }}</span>
@@ -32,13 +24,8 @@
             </li>
         {% endfor %}
     </ul>
+{% endblock %}
 
-    <div>底部分类：
-        {% for cate in categories %}
-            <ul>
-            <li><a href="/category/{{ cate.id }}/">{{ cate.name }}</a></li>
-            </ul>
-        {% endfor %}
-    </div>
-</body>
-</html>
+
+
+

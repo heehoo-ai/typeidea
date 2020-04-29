@@ -18,6 +18,7 @@ class Category(models.Model):
     owner = models.ForeignKey(User, verbose_name="作者", on_delete=models.DO_NOTHING)
     created_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
 
+
     class Meta:
         verbose_name = "分类"
         verbose_name_plural = "分类"
@@ -82,6 +83,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category, verbose_name="分类", on_delete=models.DO_NOTHING)
     tag = models.ManyToManyField(Tag, verbose_name="标签")
     owner = models.ForeignKey(User, verbose_name="作者", on_delete=models.DO_NOTHING)
+    pv = models.PositiveIntegerField(default=1) # 统计每篇文章的访问量
+    uv = models.PositiveIntegerField(default=1)
 
     class Meta:
         verbose_name = "文章"
@@ -117,5 +120,9 @@ class Post(models.Model):
 
     @classmethod
     def latest_posts(cls):
-        queryset = cls.objects.filter(status=Post.STATUS_NORMAL)
+        queryset = cls.objects.filter(status=Post.STATUS_NORMAL).order_by('-created_time')
         return queryset
+
+    @classmethod
+    def hot_posts(cls):
+        return cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
