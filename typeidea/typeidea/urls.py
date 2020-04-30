@@ -16,16 +16,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from .custom_site import custom_site
-from blog.views import post_list, post_detail
+from blog.views import post_list
 from config.views import links
 
+from blog.views import (IndexView, PostDetailView, CategoryView, TagView,)
 
+"""
 urlpatterns = [
     re_path(r'^$', post_list, name='index'),
     re_path(r'^category/(?P<category_id>\d+)/$', post_list, name='category-list'),
     re_path(r'^tag/(?P<tag_id>\d+)/$', post_list, name='tag-list'),
     re_path(r'^link/$', links, name='links'),
     re_path(r'^post/(?P<post_id>\d+).html$', post_detail, name='post-detail'),
+    path('admin/', custom_site.urls, name='admin'),
+    path('super_admin/', admin.site.urls, name='super-admin')
+]
+"""
+urlpatterns = [
+    re_path(r'^$', IndexView.as_view(), name='index'),
+    re_path(r'^category/(?P<category_id>\d+)/$', CategoryView.as_view(), name='category-list'),
+    re_path(r'^tag/(?P<tag_id>\d+)/$', TagView.as_view(), name='tag-list'),
+    re_path(r'^link/$', links, name='links'),
+    re_path(r'^post/(?P<post_id>\d+).html$', PostDetailView.as_view(), name='post-detail'),
     path('admin/', custom_site.urls, name='admin'),
     path('super_admin/', admin.site.urls, name='super-admin')
 ]
