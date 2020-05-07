@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5新语义化标签</title>
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>主标题</h1>
+            <h2>副标题</h2>
+        </hgroup>
+        <nav>
+            <ul>
+                <li>首页</li>
+                <li>仪器类型</li>
+                <li>设备管理</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section>
+                <ul>
+                    <li>
+                        <figure>
+                            <img src="../img/up.jpg" alt="">
+                            <figcaption>
+                                图片的描述
+                                <br>
+                                fig description
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                Webpage: <input type="url" list="url_list" name="link" >
+                <datalist id="url_list">
+                    <option label="W3School" value="http://www.w3school.com.cn" />
+                    <option label="Google" value="http://www.google.com" />
+                    <option label="Microsoft" value="http://www.microsoft.com" />
+                </datalist>
+                <input type="submit" />
+                <details open>
+                    <summary>HTML</summary>
+                    <p>超文本标记语言</p>
+                </details>
+                <progress min="0" max="100" value="50"></progress>
+                <meter min="0" max="100" value="80" low="30" high="60"></meter>
+            </section>
+            <section></section>
+
+        </article>
+        <aside>
+
+        </aside>
+    </main>
+    <footer></footer>
+
+</body>
+</html>
