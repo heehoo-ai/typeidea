@@ -19,6 +19,13 @@
                 <div>
                     <span>作者：{{ post.owner.username }}</span>
                     <span>分类：{{ post.category.name }}</span>
+                    <span>标签:
+                        {% for tag in post.tag.all %}
+                        <a href="{% url 'tag-list' tag.id %}">{{ tag.name }}</a>
+                        {% endfor %}
+                    </span>
+                    <hr/>
+
                 </div>
                 <p>{{ post.desc }}</p>
             </li>
