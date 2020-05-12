@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+
+from comment.views import CommentView
 from .custom_site import custom_site
 
 from blog.views import (IndexView, PostDetailView, CategoryView, TagView, SearchView, AuthorView,)
@@ -39,6 +41,7 @@ urlpatterns = [
     re_path(r'^post/(?P<post_id>\d+).html$', PostDetailView.as_view(), name='post-detail'),
     re_path(r'^search/$', SearchView.as_view(), name='search'),
     re_path(r'^author/(?P<author_id>\d+)/$', AuthorView.as_view(), name='author'),
+    re_path(r'^comment/$', CommentView.as_view(), name='comment'),
     path('admin/', custom_site.urls, name='admin'),
     path('super_admin/', admin.site.urls, name='super-admin')
 ]
