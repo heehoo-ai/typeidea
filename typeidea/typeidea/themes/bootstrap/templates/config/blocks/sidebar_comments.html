@@ -1,8 +1,8 @@
 <ul>
     {% for commnent in comments %}
         <li>
-            <a href="/post/{{ commnent.target_id }}.html">{{ commnent.target.title }}</a> |
-            {{ commnent.nickname }} : {{ commnent.content }}
+            <a href="{{ commnent.target }}">{{ commnent.target.title }}</a> |
+            {{ commnent.nickname }} : {{ commnent.content | safe}}
         </li>
     {% endfor %}
 </ul>

@@ -1,3 +1,4 @@
+import mistune
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -78,6 +79,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255, verbose_name="标题")
     desc = models.CharField(max_length=1024, blank=True, verbose_name="摘要")
     content = models.TextField(verbose_name="正文", help_text="正文必须为MarkDown格式")
+    content_html = models.TextField(verbose_name="正文Markdown格式", blank=True, editable=False)
     status = models.PositiveIntegerField(default=STATUS_NORMAL, choices=STATUS_ITEMS, verbose_name="状态")
     created_time = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     category = models.ForeignKey(Category, verbose_name="分类", on_delete=models.DO_NOTHING)
@@ -126,3 +128,7 @@ class Post(models.Model):
     @classmethod
     def hot_posts(cls):
         return cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
+
+    def save(self, *args, **kwargs):
+        self.content_html = mistune.markdown(self.content)
+        super().save(*args, **kwargs)

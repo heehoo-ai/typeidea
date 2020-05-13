@@ -1,7 +1,12 @@
 {% extends "./base.html" %}
+{% load comment_block %}
+{% block title %} {{ post.title }} {% endblock %}
 
-{% block title %}
-    {{ post.title }}
+{% block extra_head %}
+<link rel="stylesheet" href="/static/highlight/styles/agate.css">
+<script src="/static/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 {% endblock %}
 
 {% block main %}
@@ -11,39 +16,16 @@
             <span>分类：{{ post.category.name }}</span>
             <span>作者：{{ post.owner.username }}</span>
         </div>
-        <p>{{ post.content }}</p>
-        <hr/>
-        <div class="comment">
-            <form class="form-group" action="{% url 'comment' %}" method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                    <input name="target" type="hidden" value="{{ request.path }}">
-                    {{ comment_form }}
-                </div>
-                <button type="submit" class="btn btn-primary">写好了！</button>
-            </form>
-        </div>
-
-        <!-- 评论列表 -->
-
-        <ul class="list-group">
-            {% for comment in comment_list %}
-             <li class="list-group-item">
-                <div class="nickname">
-                    <a href="{{ comment.website }}">{{ comment.nickname }}</a>
-                    <span>{{ comment.created_time }}</span>
-                </div>
-                <div class="comment-content">
-                    {{ comment.content }}
-                </div>
-             </li>
-
-           {% endfor %}
-        </ul>
-
+        <p>
+            {% autoescape off %}
+            {{ post.content_html }}
+            {% endautoescape %}
+        </p>
 
     {% else %}
         <h2>没有id为{{ post.id }}的文章</h2>
     {% endif %}
+
+    {% comment_block request.path %}
 
 {% endblock %}
