@@ -13,7 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+from django.contrib import admin, sitemaps
+from django.contrib.sitemaps import views
 from django.urls import path, re_path
 
 from comment.views import CommentView
@@ -21,6 +22,10 @@ from .custom_site import custom_site
 
 from blog.views import (IndexView, PostDetailView, CategoryView, TagView, SearchView, AuthorView,)
 from config.views import LinkListView
+
+from blog.rss import LatestPostFeed
+
+from blog.sitemap import PostSitemap
 
 """
 urlpatterns = [
@@ -42,6 +47,11 @@ urlpatterns = [
     re_path(r'^search/$', SearchView.as_view(), name='search'),
     re_path(r'^author/(?P<author_id>\d+)/$', AuthorView.as_view(), name='author'),
     re_path(r'^comment/$', CommentView.as_view(), name='comment'),
+    path('sitemap.xml', views.sitemap, {'sitemaps': {'posts': PostSitemap}},
+         name='django.contrib.sitemaps.views.sitemap'),
     path('admin/', custom_site.urls, name='admin'),
-    path('super_admin/', admin.site.urls, name='super-admin')
+    path('super_admin/', admin.site.urls, name='super-admin'),
+    path('rss/', LatestPostFeed(), name='rss'),
+
 ]
+# re_path(r'^sitemap\.xml$', sitemap_views.sitemap, {'sitemaps': {'posts': PostSitemap}}),
