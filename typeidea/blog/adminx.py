@@ -65,8 +65,13 @@ class CategoryAdmin(object):
 
 @xadmin.sites.register(Tag)
 class TagAdmin(object):
-    list_display = ('name', 'status', 'created_time')
+    list_display = ('name', 'status', 'created_time', 'post_count')
     fields = ('name', 'status', )
+
+    def post_count(self, obj):
+        return obj.post_set.count()
+
+    post_count.short_description = '文章数量'
 
 
 class CategoryOwnerFilter(RelatedFieldListFilter):

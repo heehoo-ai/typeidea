@@ -29,7 +29,7 @@ class IndexView(CommonViewMixin, ListView):
     # model = Post
     queryset = Post.latest_posts()
     template_name = 'blog/list.html'
-    paginate_by = 1
+    paginate_by = 5
     context_object_name = 'post_list'
 
 
