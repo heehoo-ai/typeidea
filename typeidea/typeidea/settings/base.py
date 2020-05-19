@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     'comment',
     'config',
 
+    'xadmin',
+    'crispy_forms',
+    'reversion',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,3 +126,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'themes', THEME, "static"),
 ]
+
