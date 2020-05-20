@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import xadmin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin, sitemaps
 from django.contrib.sitemaps import views
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 
 from comment.views import CommentView
 
@@ -53,10 +55,11 @@ urlpatterns = [
     re_path(r'^comment/$', CommentView.as_view(), name='comment'),
     re_path(r'^category-autocomplete/$', CategoryAutocomplete.as_view(), name='category-autocomplete'),
     re_path(r'^tag-autocomplete/$', TagAutocomplete.as_view(), name='tag-autocomplete'),
+    re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path('sitemap.xml', views.sitemap, {'sitemaps': {'posts': PostSitemap}},
          name='django.contrib.sitemaps.views.sitemap'),
     path('rss/', LatestPostFeed(), name='rss'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # re_path(r'^sitemap\.xml$', sitemap_views.sitemap, {'sitemaps': {'posts': PostSitemap}}),
 # path('admin/', custom_site.urls, name='admin'),

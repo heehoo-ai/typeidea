@@ -117,6 +117,9 @@ class PostAdmin(BaseOwnerAdmin):
         Fieldset(
             "内容信息",
             'desc',
+            'is_md',
+            'content_ck',
+            'content_md',
             'content',
         ),
 

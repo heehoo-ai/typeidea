@@ -92,14 +92,23 @@ class Post(models.Model):
     owner = models.ForeignKey(User, verbose_name="作者", on_delete=models.DO_NOTHING)
     pv = models.PositiveIntegerField(default=1) # 统计每篇文章的访问量
     uv = models.PositiveIntegerField(default=1)
+    is_md = models.BooleanField(default=False, verbose_name="markdown语法")
 
     class Meta:
         verbose_name = "文章"
         verbose_name_plural = "文章"
         ordering = ['-id']
 
+    def save(self, *args, **kwargs):
+        if self.is_md:
+            self.content_html = mistune.markdown(self.content)
+        else:
+            self.content_html = self.content
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
+
 
     @staticmethod
     def get_by_tag(tag_id):
@@ -134,9 +143,6 @@ class Post(models.Model):
     def hot_posts(cls):
         return cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
 
-    def save(self, *args, **kwargs):
-        self.content_html = mistune.markdown(self.content)
-        super().save(*args, **kwargs)
 
     @cached_property
     def tags(self):
