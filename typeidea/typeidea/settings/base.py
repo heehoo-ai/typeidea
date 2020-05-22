@@ -29,6 +29,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
+
     'ckeditor',
     'ckeditor_uploader',
     'dal',
@@ -166,3 +168,7 @@ CKEDITOR_CONFIGS = {
 
 DEFAULT_FILE_STORAGE = 'typeidea.storage.WatermarkStorage'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 4,
+}

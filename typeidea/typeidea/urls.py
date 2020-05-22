@@ -14,6 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import xadmin
+from rest_framework.documentation import include_docs_urls
+from rest_framework.routers import DefaultRouter
+
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin, sitemaps
@@ -22,8 +25,8 @@ from django.urls import path, re_path, include
 
 from comment.views import CommentView
 
+
 from .autocomplete import CategoryAutocomplete, TagAutocomplete
-from .custom_site import custom_site
 
 from blog.views import (IndexView, PostDetailView, CategoryView, TagView, SearchView, AuthorView,)
 from config.views import LinkListView
@@ -31,6 +34,10 @@ from config.views import LinkListView
 from blog.rss import LatestPostFeed
 
 from blog.sitemap import PostSitemap
+
+from blog.apis import PostViewSet
+
+from blog.apis import CategoryViewSet
 
 """
 urlpatterns = [
@@ -43,6 +50,10 @@ urlpatterns = [
     path('super_admin/', admin.site.urls, name='super-admin')
 ]
 """
+router = DefaultRouter()
+router.register(r'post', PostViewSet, base_name='api-post')
+router.register(r'category', CategoryViewSet, base_name='api-category')
+
 urlpatterns = [
     re_path(r'^$', IndexView.as_view(), name='index'),
     re_path(r'^admin/', xadmin.site.urls, name='xadmin'),
@@ -56,9 +67,13 @@ urlpatterns = [
     re_path(r'^category-autocomplete/$', CategoryAutocomplete.as_view(), name='category-autocomplete'),
     re_path(r'^tag-autocomplete/$', TagAutocomplete.as_view(), name='tag-autocomplete'),
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    re_path(r'^api/', include(router.urls)),
+    re_path(r'^api/docs/', include_docs_urls(title='typeidea apis')),
     path('sitemap.xml', views.sitemap, {'sitemaps': {'posts': PostSitemap}},
          name='django.contrib.sitemaps.views.sitemap'),
     path('rss/', LatestPostFeed(), name='rss'),
+
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # re_path(r'^sitemap\.xml$', sitemap_views.sitemap, {'sitemaps': {'posts': PostSitemap}}),
