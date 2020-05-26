@@ -24,10 +24,12 @@ class PostDetailSerializer(PostSerializer):
         fields = ['id', 'title', 'category', 'tag', 'owner', 'content_html', 'created_time']
 
 
-class CategorySerializer(serializers.ModelSerializer):
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name='api-category-detail')
     class Meta:
+
         model = Category
-        fields = ['id', 'name', 'created_time']
+        fields = ['url', 'id', 'name', 'created_time']
 
 
 class CategoryDetailSerializer(CategorySerializer):
