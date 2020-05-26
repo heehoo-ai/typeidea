@@ -6,12 +6,8 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView
 
-from comment.forms import CommentForm
-
-from comment.models import Comment
 from .models import Post, Tag, Category
 from config.models import SideBar
-
 
 
 # Create your views here.

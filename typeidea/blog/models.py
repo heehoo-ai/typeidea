@@ -3,7 +3,6 @@
 import mistune
 from django.db import models
 from django.contrib.auth.models import User
-
 # Create your models here.
 
 
@@ -135,13 +134,18 @@ class Post(models.Model):
         return post_list, category
 
     @classmethod
-    def latest_posts(cls):
+    def latest_posts(cls, with_related=True):
         queryset = cls.objects.filter(status=Post.STATUS_NORMAL).order_by('-created_time')
+        if with_related:
+            queryset = queryset.select_related('owner', 'category')
         return queryset
 
     @classmethod
     def hot_posts(cls):
-        return cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
+        queryset = cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
+        if with_related:
+            queryset = queryset.select_related('owner', 'category')
+        return queryset
 
 
     @cached_property
