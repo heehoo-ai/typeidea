@@ -1,6 +1,7 @@
 
 
 import mistune
+from django.core.cache import cache
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
@@ -141,11 +142,14 @@ class Post(models.Model):
         return queryset
 
     @classmethod
-    def hot_posts(cls):
-        queryset = cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
-        if with_related:
-            queryset = queryset.select_related('owner', 'category')
-        return queryset
+    def hot_posts(cls, with_related=True):
+        result = cache.get('hot_posts')
+        if not result:
+            result = cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
+            if with_related:
+                result = result.select_related('owner', 'category')
+            cache.set('hot_posts', result, 10 * 60)
+        return result
 
 
     @cached_property

@@ -26,12 +26,11 @@ DATABASES = {
 if DEBUG:
     # django2.0 debug toolbar
     MIDDLEWARE +=[
-        # 'debug_toolbar.middleware.DebugToolbarMiddleware',
-        # 'silk.middleware.SilkyMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'silk.middleware.SilkyMiddleware',
     ]
     INSTALLED_APPS += [
         'debug_toolbar',
-        'pympler',
         'silk',
     ]
 

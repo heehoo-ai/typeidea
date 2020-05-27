@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import xadmin
+from django.views.decorators.cache import cache_page
 from rest_framework.documentation import include_docs_urls
 from rest_framework.routers import DefaultRouter
 
@@ -69,7 +70,7 @@ urlpatterns = [
     re_path(r'^ckeditor/', include('ckeditor_uploader.urls')),
     re_path(r'^api/', include(router.urls)),
     re_path(r'^api/docs/', include_docs_urls(title='typeidea apis')),
-    path('sitemap.xml', views.sitemap, {'sitemaps': {'posts': PostSitemap}},
+    path('sitemap.xml', cache_page(60 * 20, key_prefix='sitemap_cache_')(views.sitemap), {'sitemaps': {'posts': PostSitemap}},
          name='django.contrib.sitemaps.views.sitemap'),
     path('rss/', LatestPostFeed(), name='rss'),
 
