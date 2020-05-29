@@ -15,6 +15,7 @@ class CommentView(TemplateView):
         # 接受form表单提交的数据
         comment_form = CommentForm(request.POST)
         target = request.POST.get('target')
+        # print(request.POST)
 
         if comment_form.is_valid():
             instance = comment_form.save(commit=False)
