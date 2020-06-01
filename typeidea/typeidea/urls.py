@@ -74,8 +74,6 @@ urlpatterns = [
          name='django.contrib.sitemaps.views.sitemap'),
     path('rss/', LatestPostFeed(), name='rss'),
 
-
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # re_path(r'^sitemap\.xml$', sitemap_views.sitemap, {'sitemaps': {'posts': PostSitemap}}),
 # path('admin/', custom_site.urls, name='admin'),

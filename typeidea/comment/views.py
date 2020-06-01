@@ -5,6 +5,7 @@ from django.views import View
 from django.views.generic import TemplateView
 
 from comment.forms import CommentForm
+from .models import Comment
 
 
 class CommentView(TemplateView):
@@ -14,12 +15,15 @@ class CommentView(TemplateView):
     def post(self, request):
         # 接受form表单提交的数据
         comment_form = CommentForm(request.POST)
-        target = request.POST.get('target')
-        # print(request.POST)
+        target = request.POST.get('target')  # /post/23.html
+        import re
+        target_post_id = re.findall(r"\d+", target)
 
         if comment_form.is_valid():
             instance = comment_form.save(commit=False)
             instance.target = target
+            instance.target_post_id = int(target_post_id[0])
+
             instance.save()
             succeed = True
             return redirect(target)  # ?
