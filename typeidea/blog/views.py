@@ -4,7 +4,7 @@ from django.core.cache import cache
 from django.db.models import Q, F
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 
 from .models import Post, Tag, Category
 from config.models import SideBar
@@ -131,6 +131,7 @@ def post_detail(request, post_id=None):
     context.update(Category.get_navs())
     return render(request, 'blog/detail.html', context=context)
 
+
 class SearchView(IndexView):
     def get_context_data(self):
         context = super().get_context_data()
@@ -154,3 +155,23 @@ class AuthorView(IndexView):
         author_id = self.kwargs.get('author_id')
         return queryset.filter(owner_id=author_id)
 
+
+def category_list(request,):
+    category = None
+
+    category = Post.objects.filter(title__contains="测试").values_list('category__name').distinct()
+    context = {
+        'category': category,
+
+    }
+    return render(request, 'blog/about.html', context=context)
+
+
+class AboutView(ListView):
+    # model = Post
+    # queryset = Post.objects.filter(title__contains="测试").values_list('category__name')
+    template_name = "blog/about.html"
+    context_object_name = 'posts'
+    def get_queryset(self):
+        ret = Post.objects.filter(title__contains="测试").values_list("category__name", flat=True)
+        return ret.distinct()

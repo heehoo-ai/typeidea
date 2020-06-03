@@ -40,6 +40,10 @@ from blog.apis import PostViewSet
 
 from blog.apis import CategoryViewSet
 
+from blog.views import category_list
+
+from blog.views import AboutView
+
 """
 urlpatterns = [
     re_path(r'^$', post_list, name='index'),
@@ -54,6 +58,8 @@ urlpatterns = [
 router = DefaultRouter()
 router.register(r'post', PostViewSet, base_name='api-post')
 router.register(r'category', CategoryViewSet, base_name='api-category')
+
+
 
 urlpatterns = [
     re_path(r'^$', IndexView.as_view(), name='index'),
@@ -73,10 +79,11 @@ urlpatterns = [
     path('sitemap.xml', cache_page(60 * 20, key_prefix='sitemap_cache_')(views.sitemap), {'sitemaps': {'posts': PostSitemap}},
          name='django.contrib.sitemaps.views.sitemap'),
     path('rss/', LatestPostFeed(), name='rss'),
+    # path('about/', category_list, name='about'),
+    path('about/', AboutView.as_view()),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# re_path(r'^sitemap\.xml$', sitemap_views.sitemap, {'sitemaps': {'posts': PostSitemap}}),
-# path('admin/', custom_site.urls, name='admin'),
+
 
 if settings.DEBUG:
     import debug_toolbar

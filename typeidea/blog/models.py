@@ -118,7 +118,7 @@ class Post(models.Model):
             tag = None
             post_list = []
         else:
-            post_list = tag.post_set.filter(status=Post.STATUS_NORMAL).select_related('owner', 'category')
+            post_list = tag.post_set.filter(status=Post.STATUS_NORMAL)
 
         return post_list, tag
 
@@ -130,7 +130,7 @@ class Post(models.Model):
             category = None
             post_list = []
         else:
-            post_list = category.post_set.filter(status=Post.STATUS_NORMAL).select_related('owner', 'category')
+            post_list = category.post_set.filter(status=Post.STATUS_NORMAL)
 
         return post_list, category
 
@@ -138,7 +138,7 @@ class Post(models.Model):
     def latest_posts(cls, with_related=True):
         queryset = cls.objects.filter(status=Post.STATUS_NORMAL).order_by('-created_time')
         if with_related:
-            queryset = queryset.select_related('owner', 'category')
+            queryset = queryset.select_related()
         return queryset
 
     @classmethod
@@ -147,7 +147,7 @@ class Post(models.Model):
         if not result:
             result = cls.objects.filter(status=cls.STATUS_NORMAL).order_by('-pv')
             if with_related:
-                result = result.select_related('owner', 'category')
+                result = result.select_related()
             cache.set('hot_posts', result, 10 * 60)
         return result
 

@@ -26,7 +26,7 @@ DATABASES = {
 if DEBUG:
     # django2.0 debug toolbar
     MIDDLEWARE +=[
-        # 'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
         'silk.middleware.SilkyMiddleware',
     ]
     INSTALLED_APPS += [
@@ -58,3 +58,21 @@ if DEBUG:
     'SHOW_TOOLBAR_CALLBACK': lambda x: True,
     }
 
+# Django终端打印SQL语句
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console':{
+            'level':'DEBUG',
+            'class':'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+    }
+}
