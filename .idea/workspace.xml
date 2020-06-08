@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcbb6771-eccf-4913-9a53-671a8e86a261" name="Default Changelist" comment="pycharm版本更新为专业版2019.1">
-      <change afterPath="$PROJECT_DIR$/MANIFEST.in" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/typeidea.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/typeidea.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +39,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/github_module/AdminLTE-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -55,7 +52,7 @@
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.jscs" value="C:\Users\heeho_000.HEEHOO\AppData\Roaming\npm\node_modules\jscs" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -63,20 +60,42 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\django_study\typeidea\typeidea\typeidea" />
       <recent name="C:\django_study\typeidea\typeidea" />
+      <recent name="C:\django_study\typeidea\typeidea\typeidea" />
       <recent name="C:\django_study\typeidea\typeidea\settings" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\django_study\typeidea\typeidea\comment" />
       <recent name="C:\django_study\typeidea" />
       <recent name="C:\django_study\typeidea\typeidea\typeidea\themes\bootstrap\static\js" />
       <recent name="C:\django_study\typeidea\typeidea\typeidea" />
       <recent name="C:\django_study\typeidea\typeidea\typeidea\settings" />
-      <recent name="C:\django_study\typeidea\typeidea\config" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="custom_site" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.orm01 (1)">
+    <configuration name="adminforms" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="typeidea" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/typeidea/blog" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/typeidea/blog/adminforms.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="custom_site" type="PythonConfigurationType" factoryName="Python">
       <module name="typeidea" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,9 +117,130 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="orm01 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="typeidea" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/typeidea" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/typeidea/orm01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="orm01" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="typeidea" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/typeidea/blog" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/typeidea/blog/orm01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="orm01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="typeidea" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/typeidea/typeidea" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\django_study\typeidea\typeidea\orm01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="typeidea" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/typeidea/blog" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/typeidea/blog/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="wsgi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="typeidea" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/typeidea/typeidea" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/typeidea/typeidea/wsgi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.orm01" />
+      <item itemvalue="Python.custom_site" />
+      <item itemvalue="Python.orm01 (1)" />
+      <item itemvalue="Python.views" />
+      <item itemvalue="Python.wsgi" />
+      <item itemvalue="Python.adminforms" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.custom_site" />
+        <item itemvalue="Python.orm01 (1)" />
+        <item itemvalue="Python.adminforms" />
+        <item itemvalue="Python.wsgi" />
+        <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -127,6 +267,10 @@
       <workItem from="1590367647733" duration="24028000" />
       <workItem from="1590540536667" duration="23761000" />
       <workItem from="1590645316669" duration="4647000" />
+      <workItem from="1591059368489" duration="36874000" />
+      <workItem from="1591257465228" duration="1355000" />
+      <workItem from="1591336491088" duration="178000" />
+      <workItem from="1591602277714" duration="853000" />
     </task>
     <task id="LOCAL-00001" summary="pycharm版本更新为专业版2019.1">
       <created>1586487463265</created>
@@ -148,6 +292,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pycharm版本更新为专业版2019.1" />
     <MESSAGE value="css学习" />
@@ -162,10 +316,11 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="722" y="367" key="#Notifications/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1589941070385" />
-    <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590541569705">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="1954" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591062360479">
+      <screen x="1680" y="0" width="1366" height="728" />
     </state>
     <state x="432" y="163" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1590541569705" />
+    <state x="1954" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591062360479" />
     <state x="579" y="308" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590567838700">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -174,11 +329,43 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="438" y="72" key="CommitChangelistDialog2/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1589863133141" />
-    <state x="583" y="179" key="FileChooserDialogImpl" timestamp="1590652206536">
+    <state x="92" y="92" width="1496" height="826" key="DiffContextDialog" timestamp="1590996607444">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
+    <state x="92" y="92" width="1496" height="826" key="DiffContextDialog/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1590996607444" />
+    <state x="2358" y="130" key="EnvironmentVariablesDialog" timestamp="1591062359367">
+      <screen x="1680" y="0" width="1366" height="728" />
+    </state>
+    <state x="2358" y="130" key="EnvironmentVariablesDialog/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591062359367" />
+    <state x="2154" y="129" key="FileChooserDialogImpl" timestamp="1591249045499">
+      <screen x="1680" y="0" width="1366" height="728" />
+    </state>
     <state x="583" y="179" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1590652206536" />
-    <state x="2154" y="129" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1586310872092" />
+    <state x="2154" y="129" key="FileChooserDialogImpl/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591249045499" />
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom" timestamp="1591249206672">
+      <screen x="1680" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="270" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1591164579793" />
+    <state width="1323" height="91" key="GridCell.Tab.0.bottom/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591249206672" />
+    <state width="1323" height="91" key="GridCell.Tab.0.center" timestamp="1591249206671">
+      <screen x="1680" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="270" key="GridCell.Tab.0.center/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1591164579792" />
+    <state width="1323" height="91" key="GridCell.Tab.0.center/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591249206671" />
+    <state width="1323" height="91" key="GridCell.Tab.0.left" timestamp="1591249206671">
+      <screen x="1680" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="270" key="GridCell.Tab.0.left/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1591164579791" />
+    <state width="1323" height="91" key="GridCell.Tab.0.left/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591249206671" />
+    <state width="1323" height="91" key="GridCell.Tab.0.right" timestamp="1591249206671">
+      <screen x="1680" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="270" key="GridCell.Tab.0.right/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1591164579792" />
+    <state width="1323" height="91" key="GridCell.Tab.0.right/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591249206671" />
+    <state x="671" y="225" key="RollbackChangesDialog" timestamp="1590996721375">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="671" y="225" key="RollbackChangesDialog/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1590996721375" />
     <state x="341" y="149" key="SettingsEditor" timestamp="1590568140318">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -187,10 +374,11 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="520" y="329" key="com.intellij.ide.util.TipDialog/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1586306902784" />
-    <state x="542" y="208" width="596" height="594" key="find.popup" timestamp="1590132249992">
-      <screen x="0" y="0" width="1680" height="1010" />
+    <state x="2121" y="134" width="566" height="594" key="find.popup" timestamp="1591062719362">
+      <screen x="1680" y="0" width="1366" height="728" />
     </state>
     <state x="542" y="208" width="596" height="594" key="find.popup/0.0.1680.1010/1680.0.1366.728@0.0.1680.1010" timestamp="1590132249992" />
+    <state x="2121" y="134" width="566" height="594" key="find.popup/0.0.1680.1010/1680.0.1366.728@1680.0.1366.728" timestamp="1591062719362" />
     <state x="503" y="217" width="672" height="678" key="search.everywhere.popup" timestamp="1590545403650">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -207,6 +395,13 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/typeidea$orm01.coverage" NAME="orm01 Coverage Results" MODIFIED="1591062800796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea/blog" />
+    <SUITE FILE_PATH="coverage/typeidea$orm.coverage" NAME="orm Coverage Results" MODIFIED="1591060732682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea/orm01" />
+    <SUITE FILE_PATH="coverage/typeidea$adminforms.coverage" NAME="adminforms Coverage Results" MODIFIED="1591243287463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea/blog" />
+    <SUITE FILE_PATH="coverage/typeidea$wsgi.coverage" NAME="wsgi Coverage Results" MODIFIED="1591171678148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea/typeidea" />
+    <SUITE FILE_PATH="coverage/typeidea$orm01__1_.coverage" NAME="orm01 (1) Coverage Results" MODIFIED="1591243306626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea" />
     <SUITE FILE_PATH="coverage/typeidea$custom_site.coverage" NAME="custom_site Coverage Results" MODIFIED="1589851491352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea" />
+    <SUITE FILE_PATH="coverage/typeidea$orm01__2_.coverage" NAME="orm01 (2) Coverage Results" MODIFIED="1591076614293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea/typeidea" />
+    <SUITE FILE_PATH="coverage/typeidea$views.coverage" NAME="views Coverage Results" MODIFIED="1591171652870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/typeidea/blog" />
   </component>
 </project>

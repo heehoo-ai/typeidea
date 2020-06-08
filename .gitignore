@@ -100,3 +100,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# database migrations
+*/migrations/*.py
+!*/migrations/__init__py
