@@ -59,6 +59,7 @@ if DEBUG:
     }
 
 # Django终端打印SQL语句
+"""
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -76,3 +77,5 @@ LOGGING = {
         },
     }
 }
+"""
+
