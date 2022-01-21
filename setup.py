@@ -21,7 +21,7 @@ setup(
 
     ],
     extras_require={
-        'ipython': ['ipython==6.2.1']
+        'ipython': ['ipython==7.16.3']
     },
     scripts=[
         'typeidea/manage.py',
